@@ -1,0 +1,24 @@
+
+// Body
+$body-bg: #fff;
+
+// Borders
+
+
+// Typography
+$font-family-sans-serif:    "Roboto", sans-serif;
+$headings-font-family:      "Karla", sans-serif;
+
+// $font-size-base: 0.9rem;
+// $line-height-base: 1.6;*/
+
+// Colors
+$link-color:                #6c757d;
+$link-hover-color:          #343a40;
+$enable-shadows: true;
+
+// Modal modifications
+$modal-backdrop-bg:                 #fff !default;
+$modal-backdrop-opacity:            .5 !default;
+$modal-content-box-shadow-xs:       0 0rem .5rem rgba(#000, .5) !default;
+$modal-content-box-shadow-sm-up:    0 0rem 1rem rgba(#000, .5) !default;

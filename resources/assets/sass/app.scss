@@ -1,0 +1,38 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Karla|Roboto');
+
+// Bootstrap
+// Variables
+@import "variables";
+@import '~bootstrap/scss/bootstrap';
+
+// Magnific Popup
+@import "settings";
+@import "~magnific-popup/src/css/main.scss";
+
+// Custom CSS
+html, body {
+  height: 100% !important;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+// Modify card column count
+.card-columns {
+  @include media-breakpoint-only(xl) {
+    column-count: 2;
+  }
+  @include media-breakpoint-only(lg) {
+    column-count: 2;
+  }
+  @include media-breakpoint-only(md) {
+    column-count: 2;
+  }
+  @include media-breakpoint-only(sm) {
+    column-count: 2;
+  }
+}

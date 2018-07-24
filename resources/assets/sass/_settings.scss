@@ -1,0 +1,9 @@
+// overlay
+$mfp-overlay-color:                   #fff !default;                    // Color of overlay screen
+$mfp-overlay-opacity:                 0.5 !default;                     // Opacity of overlay screen
+$mfp-shadow:                          0 0 1rem rgba(0, 0, 0, 0.5) !default; // Shadow on image or iframe
+
+// controls
+$mfp-controls-color:                  #000 !default;                    // Color of controls
+$mfp-controls-border-color:           #fff !default; 	                // Border color of controls
+$mfp-controls-text-color:             #aaa !default;                       // Color of preloader and "1 of X" indicator
