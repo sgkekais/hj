@@ -13,9 +13,7 @@
             {!! $staticPage->body !!}
         </div>
     @else
-        <p class="">
-            {!! $staticPage->body !!}
-        </p>
+         {!! $staticPage->body !!}
     @endif
 
 @endsection
