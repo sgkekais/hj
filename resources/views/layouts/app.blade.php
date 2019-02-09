@@ -42,6 +42,7 @@
                     <h4 class="pt-0 mt-0"><a href="{{ route('home') }}" class="text-dark">HARRY JEON</a></h4>
                     <nav class="nav flex-column">
                         <a class="nav-link pl-0" href="/works">WORKS</a>
+                        <a class="nav-link pl-0" href="/about">ABOUT</a>
                         <a class="nav-link pl-0" href="/vita">VITA</a>
                         <a class="nav-link pl-0" href="#" data-toggle="modal" data-target="#contactModal">CONTACT</a>
                     </nav>
@@ -69,7 +70,7 @@
         </div>
         <footer class="text-center text-sm-right mt-4 text-muted">
             <span class="border-top pt-2">
-                <small>Imprint & Data Privacy | &copy; {{ date('Y') }} Harry Jeon</small>
+                <small>{{-- Imprint & Data Privacy |  --}}&copy; {{ date('Y') }} Harry Jeon</small>
             </span>
         </footer>
     </div>

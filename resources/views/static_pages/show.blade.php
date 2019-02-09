@@ -8,8 +8,14 @@
 
 @section('content')
 
-    <p class="">
-        {!! $staticPage->body  !!}
-    </p>
+    @if( $staticPage->title_short == "About")
+        <div class="col-6 ml-0 pl-0">
+            {!! $staticPage->body !!}
+        </div>
+    @else
+        <p class="">
+            {!! $staticPage->body !!}
+        </p>
+    @endif
 
 @endsection
