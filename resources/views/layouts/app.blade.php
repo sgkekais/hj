@@ -52,6 +52,7 @@
                 </div>
             </div>
             <main class="col">
+                <hr class="d-flex d-md-none">
                 @unless(Route::currentRouteName() == 'home')
                     <div class="row">
                         <div class="col">
