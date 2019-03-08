@@ -49,8 +49,15 @@
                 <div class="">
                     <h4 class="pt-0 mt-0"><a href="{{ route('home') }}" class="text-dark">HARRY JEON</a></h4>
                     <nav class="nav flex-column">
-                        <a class="nav-link pl-0" href="/works">WORKS</a>
-                        <a class="nav-link pl-0" href="/about">ABOUT</a>
+                        <a class="nav-link pl-0" href="#worklist" data-toggle="collapse" >WORKS</a>
+                        <ul class="list-unstyled collapse" id="worklist">
+                            @foreach(\App\Work::orderBy('year', 'desc')->get() as $work)
+                                <li>
+                                    <a class="nav-link pl-2" href="{{ route('works.show', $work) }}"><small>{{ $work->title_short }}</small></a>
+                                </li>
+                            @endforeach
+                        </ul>
+
                         <a class="nav-link pl-0" href="/vita">VITA</a>
                         <a class="nav-link pl-0" href="#" data-toggle="modal" data-target="#contactModal">CONTACT</a>
                     </nav>
@@ -64,9 +71,9 @@
                 @unless(Route::currentRouteName() == 'home')
                     <div class="row">
                         <div class="col">
-                            <h2 class="text-uppercase mb-4">
+                            <h3 class="mb-4">
                                 @yield('content-title')
-                            </h2>
+                            </h3>
                         </div>
                     </div>
                 @endunless
@@ -79,7 +86,7 @@
         </div>
         <footer class="text-center text-sm-right mt-4 text-muted">
             <span class="border-top pt-2">
-                <small>{{-- Imprint & Data Privacy |  --}}&copy; {{ date('Y') }} Harry Jeon</small>
+                <small>{{-- TODO: Imprint & Data Privacy |  --}}&copy; {{ date('Y') }} Harry Jeon</small>
             </span>
         </footer>
     </div>

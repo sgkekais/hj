@@ -13,32 +13,48 @@
     @if ($work->description)
         <div class="row">
             <div class="col">
-                <div class="text-muted bg-light pt-2 px-2 border-top border-bottom">
+                <div class="text-muted p-2">
                     {!! $work->description !!}
                 </div>
             </div>
         </div>
     @endif
 
-    <div class="row pt-2">
-        <div class="col">
-            <div class="d-flex flex-row flex-wrap justify-content-between gallery-container">
-                @forelse($pictures ?: [] as $picture)
+    @if($work->work_type == "video")
 
-                    <a href="{{ asset('storage/'.$picture) }}" class="d-flex d-block pt-4">
-                        <img src="{{ substr(asset('storage/'.$picture), 0, -4)."-small".substr(asset('storage/'.$picture), -4) }}" class="img-fluid">
-                    </a>
-                    <!-- style="max-height: 400px; width: auto" -->
-                @empty
+        @if($work->work_video)
+            <div class="row py-2">
+                <div class="col">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="{{ $work->work_video }}" allowFullScreen mozallowfullscreen webkitAllowFullScreen></iframe>
+                    </div>
+                </div>
+            </div>
+        @endif
 
-                    <a href="{{ asset('storage/'.$work->cover_image) }}">
-                        <img src="{{ substr(asset('storage/'.$work->cover_image), 0, -4)."-small".substr(asset('storage/'.$work->cover_image), -4) }}" class="img-fluid pt-4">
-                    </a>
+    @elseif($work->work_type == "images")
+        <div class="row">
+            <div class="col-md-6">
+                <div class="d-flex flex-row flex-wrap justify-content-between gallery-container">
+                    @forelse($pictures ?: [] as $picture)
+                        <a href="{{ asset('storage/'.$picture) }}" class="d-flex d-block {{ !$loop->first ? "pt-4" : null }}">
+                            <img src="{{ substr(asset('storage/'.$picture), 0, -4)."-small".substr(asset('storage/'.$picture), -4) }}" class="img-fluid">
+                        </a>
+                    @empty
 
-                @endforelse
+                        @if($work->cover_image)
+                            <a href="{{ asset('storage/'.$work->cover_image) }}">
+                                <img src="{{ substr(asset('storage/'.$work->cover_image), 0, -4)."-small".substr(asset('storage/'.$work->cover_image), -4) }}" class="img-fluid pt-4">
+                            </a>
+                        @endif
+
+                    @endforelse
+                </div>
             </div>
         </div>
-    </div>
+    @endif
+
+
 
 @endsection
 
