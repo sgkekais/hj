@@ -30,7 +30,9 @@ class WorkController extends Controller
     {
         $pictures = json_decode($work->work_images, true);
 
-        return view('works.show', compact('work', 'pictures'));
+        $videos = explode(',', $work->work_video);
+
+        return view('works.show', compact('work', 'pictures', 'videos'));
     }
 
 }

@@ -19,9 +19,11 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
-    <meta name="msapplication-TileColor" content="#ffffff">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+
+
 
 </head>
 <body>
@@ -45,19 +47,18 @@
     </div>
     <div id="app" class="container-fluid p-3 p-sm-5 h-100 d-flex flex-column justify-content-between">
         <div class="row">
-            <div class="col-md-2 d-flex flex-column justify-content-between">
+            <div class="col-md-3 d-flex flex-column justify-content-between">
                 <div class="">
                     <h4 class="pt-0 mt-0"><a href="{{ route('home') }}" class="text-dark">HARRY JEON</a></h4>
                     <nav class="nav flex-column">
                         <a class="nav-link pl-0" href="#worklist" data-toggle="collapse" >WORKS</a>
-                        <ul class="list-unstyled collapse" id="worklist">
+                        <ul class="list-unstyled collapse {{ Route::is('works.*') ? "show" : null }}" id="worklist">
                             @foreach(\App\Work::orderBy('year', 'desc')->get() as $work)
                                 <li>
-                                    <a class="nav-link pl-2" href="{{ route('works.show', $work) }}"><small>{{ $work->title_short }}</small></a>
+                                    <a class="nav-link pl-2 " href="{{ route('works.show', $work) }}" style="{{ Request::segment(2) == $work->slug ? "color: #343a40" : null }}"><small>{{ $work->title_short }}</small></a>
                                 </li>
                             @endforeach
                         </ul>
-
                         <a class="nav-link pl-0" href="/vita">VITA</a>
                         <a class="nav-link pl-0" href="#" data-toggle="modal" data-target="#contactModal">CONTACT</a>
                     </nav>
@@ -71,9 +72,9 @@
                 @unless(Route::currentRouteName() == 'home')
                     <div class="row">
                         <div class="col">
-                            <h3 class="mb-4">
+                            <h4 class="mb-4">
                                 @yield('content-title')
-                            </h3>
+                            </h4>
                         </div>
                     </div>
                 @endunless
@@ -84,7 +85,7 @@
                 </div>
             </main>
         </div>
-        <footer class="text-center text-sm-right mt-4 text-muted">
+        <footer class="text-left text-sm-right mt-4 text-muted">
             <span class="border-top pt-2">
                 <small>{{-- TODO: Imprint & Data Privacy |  --}}&copy; {{ date('Y') }} Harry Jeon</small>
             </span>

@@ -3,7 +3,7 @@
 @section('sidebar')
 
     @isset($front_page_work)
-        {{ $front_page_work->title_short }}<br>
+            {{ $front_page_work->title_short }}<br>
             <small class="text-muted">
                 {{ $front_page_work->materials_used }}, {{ $front_page_work->year }}
             </small>

@@ -23,13 +23,18 @@
     @if($work->work_type == "video")
 
         @if($work->work_video)
-            <div class="row py-2">
-                <div class="col">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="{{ $work->work_video }}" allowFullScreen mozallowfullscreen webkitAllowFullScreen></iframe>
+            @foreach ($videos as $video)
+
+                <div class="row py-2">
+                    <div class="col">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="{{ $video }}" allowFullScreen mozallowfullscreen webkitAllowFullScreen></iframe>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+            @endforeach
+
         @endif
 
     @elseif($work->work_type == "images")
