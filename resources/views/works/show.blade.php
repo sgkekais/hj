@@ -42,7 +42,7 @@
             <div class="col-md-6">
                 <div class="d-flex flex-row flex-wrap justify-content-between gallery-container">
                     @forelse($pictures ?: [] as $picture)
-                        <a href="{{ asset('storage/'.$picture) }}" class="d-flex d-block {{ !$loop->first ? "pt-4" : null }}">
+                        <a href="{{ asset('storage/'.$picture) }}" class="{{-- d-flex d-block --}} {{ !$loop->first ? "pt-4" : null }}">
                             {{-- <img src="{{ substr(asset('storage/'.$picture), 0, -4)."-small".substr(asset('storage/'.$picture), -4) }}" class="img-fluid"> --}}
                             <img src="{{ asset('storage/'.$picture) }}" class="img-fluid">
                         </a>
