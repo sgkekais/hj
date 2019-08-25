@@ -55,7 +55,7 @@
                         <ul class="list-unstyled collapse {{ Route::is('works.*') ? "show" : null }}" id="worklist">
                             @foreach(\App\Work::orderBy('year', 'desc')->get() as $work)
                                 <li>
-                                    <a class="nav-link pl-2 " href="{{ route('works.show', $work) }}" style="{{ Request::segment(2) == $work->slug ? "color: #343a40" : null }}"><small>{{ $work->title_short }}</small></a>
+                                    <a class="nav-link pl-2 " href="{{ route('works.show', $work) }}" style="{{ Request::segment(2) == $work->slug ? "color: #343a40" : null }}"><small>{{ $work->link_title }}</small></a>
                                 </li>
                             @endforeach
                         </ul>
