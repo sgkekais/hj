@@ -29,7 +29,7 @@ class WorkController extends Controller
     public function show(Work $work)
     {
         $pictures = json_decode($work->work_images, true);
-        sort($pictures);
+        !empty(sort($pictures));
 
         $videos = explode(',', $work->work_video);
 
