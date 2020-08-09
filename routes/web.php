@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
-
-Route::get('piss', function() {
-    return "FUCK OFF";
+Route::group(['prefix' => 'administration'], function () {
+    Voyager::routes();
 });
+
+Route::get('/', 'HomeController@index')->name('home');
 
 // Works
 Route::get('works', 'WorkController@index')->name('works.index');
@@ -25,6 +25,4 @@ Route::get('/works/{work}', 'WorkController@show')->name('works.show');
 Route::get('/contact', 'StaticPageController@contactForm')->name('contactForm');
 Route::get('/{static_page}', 'StaticPageController@show');
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
+

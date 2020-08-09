@@ -10,7 +10,17 @@ class Work extends Model
     protected $table = 'works';
 
     protected $fillable = [
-        'link_title', 'title_short', 'title_long', 'year', 'materials_used', 'description', 'cover_image', 'slug', 'front_page'
+        'link_title',
+        'slug',
+        'title_short', 'title_long',
+        'year',
+        'work_type',
+        'materials_used',
+        'description',
+        'cover_image',
+        'front_page',
+        'work_images',
+        'work_video'
     ];
 
     protected $casts = [
