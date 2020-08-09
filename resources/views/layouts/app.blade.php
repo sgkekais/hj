@@ -30,7 +30,7 @@
                 <div class="modal-body">
                     <h4>Harry Jeon</h4>
                     Send inquiries to:
-                    <a href="mailto:hello@harryjeon.com">hello@harryjeon.com</a>
+                    <a href="mailto:info@harryjeon.com">info@harryjeon.com</a>
                 </div>
             </div>
         </div>
